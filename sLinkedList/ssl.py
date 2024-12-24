@@ -14,6 +14,26 @@ class SingleLinkedList:
             yield curr.value
             curr = curr.next
             
+    def pop(self,position=None):
+        if position == 0 :
+            self.head = self.head.next
+        elif position is not None:
+            curr =  self.head
+            index = 0
+            while curr and index < position -1:
+                index += 1
+                curr = curr.next
+            print(curr.value)   
+            curr.next = curr.next.next 
+        else :
+            curr = self.head
+            while curr.next.next:
+                curr = curr.next
+            print("value is",curr.value)
+            curr.next = None
+            self.tail = curr  
+                
+                     
     # mostly we can see this in redis for managing the effinciency of insetion in both edge
     #------------------- o(1)
     def l_push(self,value):
@@ -24,6 +44,7 @@ class SingleLinkedList:
         else :
             new_node.next = self.head
             self.head = new_node    
+            
      # .... redis plays with this always ):   
      #------------------- o(1)
     def r_push(self,value):
@@ -75,6 +96,9 @@ sll.l_push(3)
 # sll.insert_el(5, 1)
 # sll.insert_el(3, 2)
 # sll.insert_el(99, 4)
+print([str(value) for value in sll.__iter__()])
+sll.pop()
+sll.r_push(17)
 print([str(value) for value in sll.__iter__()])
 
                          
