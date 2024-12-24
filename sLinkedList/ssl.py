@@ -96,9 +96,9 @@ sll.l_push(3)
 # sll.insert_el(5, 1)
 # sll.insert_el(3, 2)
 # sll.insert_el(99, 4)
-print([str(value) for value in sll.__iter__()])
+print([value for value in sll.__iter__()])
 sll.pop()
 sll.r_push(17)
-print([str(value) for value in sll.__iter__()])
+print([value for value in sll.__iter__()])
 
                          
