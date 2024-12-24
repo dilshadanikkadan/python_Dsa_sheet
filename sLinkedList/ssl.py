@@ -15,6 +15,7 @@ class SingleLinkedList:
             curr = curr.next
             
     # mostly we can see this in redis for managing the effinciency of insetion in both edge
+    #------------------- o(1)
     def l_push(self,value):
         new_node  = Node(value)
         if self.head is None:
@@ -24,6 +25,7 @@ class SingleLinkedList:
             new_node.next = self.head
             self.head = new_node    
      # .... redis plays with this always ):   
+     #------------------- o(1)
     def r_push(self,value):
         new_node = Node(value)
         if self.head is None:
